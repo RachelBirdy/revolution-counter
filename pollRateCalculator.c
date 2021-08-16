@@ -1,4 +1,5 @@
 #include <math.h>
+#include <stdio.h>
 
 int calculatePollRate(int maxRPM) {
 	double secondsPerRev = 60 / maxRPM;
