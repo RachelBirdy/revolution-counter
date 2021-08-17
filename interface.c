@@ -23,7 +23,7 @@ int main() {
 
 	while(cycle <= 500) {
 		update_screen(prev_width, prev_height, heading_win, output_win);
-		sleep(1);
+		napms(1000);
 		printf("Cycle %d complete, looping\n", cycle);
 		cycle++;
 	}
@@ -36,11 +36,14 @@ int main() {
 
 void update_screen(int *previous_width, int *previous_height, WINDOW *heading_win, WINDOW *output_win) {
 	// Check if screen size has changed
-
-	if (COLS != *previous_width || LINES != *previous_height) {
+	int current_width, current_height;
+	getmaxyx(stdscr, current_height, current_width);
+	printf("%d %d", current_width, current_height);
+	if (current_width != *previous_width || current_height != *previous_height) {
+		printf("Resize!\n");
 		screen_resize(heading_win, output_win);
-		*previous_width = COLS;
-		*previous_height = LINES;
+		*previous_width = current_width;
+		*previous_height = current_height;
 	}
 
 //	mvwprintw(heading_win, "This is a test!");
