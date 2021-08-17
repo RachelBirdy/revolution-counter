@@ -5,6 +5,10 @@ This is a piece of software I wrote to count how many times an inductor being wo
 Requirements
 ------------
 This is currently written exclusive for a Raspberry Pi 4 and needs modification for compatibility with other systems.
+This branch requires ncurses! On debian based systems, run
+`sudo apt install libncurses-dev`
+
+On other systems you're on your own
 
 Installation
 ------------
