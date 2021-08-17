@@ -1,9 +1,10 @@
 #include "pollRateCalculator.c"
+#include <curses.h>
 
 #define MAX_RPM 1000
 
 int main() {
-	calculatePollRate(1000);
+	calculatePollRate(MAX_RPM);
 	return 0;
 
 }
