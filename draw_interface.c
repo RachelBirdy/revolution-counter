@@ -2,9 +2,10 @@
 #include <stdlib.h>
 #include "create_window.h"
 
-#define TITLE "Rachel's "
+#define TITLE "Rachel's Incredible Pickup Winder!"
 #define TARGET_COUNT "Target winding count:\t"
 #define CURRENT_COUNT "Current winding count:\t"
+#define COUNT_PER_MINUTE "Current RPM: \t"
 
 WINDOW **draw_screen() {
         WINDOW *heading_win = create_window(3, 50, 0, 0);
@@ -16,6 +17,7 @@ WINDOW **draw_screen() {
         wrefresh(heading_win);
         mvwprintw(output_win, 1, 1, TARGET_COUNT);
         mvwprintw(output_win, 2, 1, CURRENT_COUNT);
+	mvwprintw(output_win, 3, 1, COUNT_PER_MINUTE);
         wrefresh(output_win);
         return local_windows;
 }
